@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090b0c"><title>The Crypt of the Hollow King</title><link rel="stylesheet" href="style.css?v=5"></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090b0c"><title>The Crypt of the Hollow King</title><link rel="stylesheet" href="style.css?v=6"></head>
 <body><main id="game">
 <header><div><h1>THE CRYPT OF THE HOLLOW KING</h1><p id="story">The iron door crashes shut behind you.</p></div><button id="restart">Restart</button></header>
 <section id="chooser" class="chooser"><h2>CHOOSE YOUR ADVENTURER</h2><p>One hero enters the crypt. Choose carefully.</p><div class="choose-grid"><button data-hero="Paladin"><b>Aldric</b><small>Paladin · Mace · High armor</small></button><button data-hero="Rogue"><b>Nyx</b><small>Rogue · Short sword · Fast attacks</small></button><button data-hero="Wizard"><b>Mira</b><small>Wizard · Staff · Powerful magic</small></button><button data-hero="Ranger"><b>Rowan</b><small>Ranger · Bow · Ranged attacks</small></button></div></section>
@@ -7,7 +7,7 @@
 <section id="party"></section>
 <section id="abilityPanel" class="ability-panel" hidden><div class="ability-head"><b>CHOOSE AN ABILITY</b><button id="closeAbilities" type="button">×</button></div><div id="abilityChoices"></div></section>
 <section class="controls"><div class="move"><span></span><button data-act="forward">▲</button><span></span><button data-act="left">↶</button><button data-act="back">▼</button><button data-act="right">↷</button></div>
-<div class="actions"><button data-act="attack" class="primary">ATTACK</button><button data-act="skill">SKILLS</button><button data-act="potion">POTION</button><button data-act="use">USE</button><button data-act="search">SEARCH</button><button data-act="map">MAP</button><button data-act="rest">REST</button></div></section>
+<div class="actions"><button data-act="attack" class="primary">ATTACK</button><button data-act="skill">SKILLS</button><button id="useSkill" data-act="use-skill">USE: SKILL</button><button data-act="potion">POTION</button><button data-act="use">USE</button><button data-act="search">SEARCH</button><button data-act="map">MAP</button><button data-act="rest">REST</button></div></section>
 <section class="hud"><span id="inventory">Keys 0 · Gold 0 · Potions 2</span><p id="log">Torchlight dances across ancient stone. Find another way out.</p></section>
 <footer>W/↑ forward · S/↓ back · A/D turn · J attack · K skill · E use · Q search · H potion · M map</footer>
-</main><script src="game.js?v=5"></script></body></html>
+</main><script src="game.js?v=6"></script></body></html>
