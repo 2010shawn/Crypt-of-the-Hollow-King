@@ -127,8 +127,8 @@ function map(){rect(0,0,800,500,"#080909");let s=25,ox=185,oy=48;for(let yy=0;yy
 drops.filter(d=>!d.taken).forEach(d=>mapMark(d.x,d.y,"◆",d.rare?"#e5c35f":"#c99a50","Loot"));
 if(seen.has(key(5,5))&&!foundSeals.has("bone"))mapMark(5,5,"◇","#d8cfad","Sarcophagus");
 if(seen.has(key(11,10))&&(!foundSeals.has("shadow")||!secret))mapMark(11,10,"?","#9f8bc2","Secret");
-if(seen.has(key(13,12))&&sealPlaced<3)mapMark(13,12,"◉","#c2a45e","Seal sockets");
-let fx=ox+x*s+11,fy=oy+y*s+12;c.fillStyle="#e0c45e";c.font="bold 17px monospace";c.textAlign="center";c.fillText(["▲","▶","▼","◀"][dir],fx,fy);c.textAlign="left";c.fillStyle="#c9c1ad";c.font="13px monospace";c.fillText("◆ loot  ◇ interact  ? secret  ◉ objective",205,438);c.fillText("AUTOMAP · discovered points of interest remain marked",205,462)}
+if(seen.has(key(13,12))&&sealPlaced<3){mapMark(13,12,"◉","#c2a45e","Grave Seal Mechanism");let ms=25,mox=185,moy=48,mx=mox+13*ms+11,my=moy+12*ms;c.fillStyle="rgba(8,9,8,.88)";c.fillRect(mx-74,my+10,148,18);c.fillStyle="#d8bd76";c.font="bold 9px monospace";c.textAlign="center";c.fillText("GRAVE SEAL MECHANISM",mx,my+22);c.textAlign="left"}
+let fx=ox+x*s+11,fy=oy+y*s+12;c.fillStyle="#e0c45e";c.font="bold 17px monospace";c.textAlign="center";c.fillText(["▲","▶","▼","◀"][dir],fx,fy);c.textAlign="left";c.fillStyle="#c9c1ad";c.font="13px monospace";c.fillText("◆ loot  ◇ interact  ? secret  ◉ GRAVE SEAL MECHANISM",175,438);c.fillText("AUTOMAP · discovered points of interest remain marked",205,462)}
 function draw(){mapMode?map():dungeon();renderEffects()}
 setInterval(()=>{if(chosen&&!mapMode){animTick++;draw()}},420)
 document.querySelectorAll("[data-act]").forEach(b=>b.onclick=()=>{let a=b.dataset.act;if(a==="forward")move(1);if(a==="back")move(-1);if(a==="left")turn(-1);if(a==="right")turn(1);if(a==="attack")attack();if(a==="skill")showAbilities();if(a==="use-skill")attack(true);if(a==="use")use();if(a==="search")search();if(a==="rest")rest();if(a==="potion")potion();if(a==="map"){mapMode=!mapMode;draw()}if(a==="inventory")showInventory()});
