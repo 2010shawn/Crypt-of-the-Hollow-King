@@ -119,7 +119,7 @@ function mapMark(mx,my,sym,col,label){if(!seen.has(key(mx,my)))return;let s=25,o
 function map(){rect(0,0,800,500,"#080909");let s=25,ox=185,oy=48;for(let yy=0;yy<grid.length;yy++)for(let xx=0;xx<grid[yy].length;xx++){if(!seen.has(key(xx,yy)))continue;rect(ox+xx*s,oy+yy*s,s-2,s-2,tile(xx,yy)==="#"?"#1d1e1c":tile(xx,yy)==="D"?"#6d593b":"#3d3d38")}
 drops.filter(d=>!d.taken).forEach(d=>mapMark(d.x,d.y,"◆",d.rare?"#e5c35f":"#c99a50","Loot"));
 if(seen.has(key(5,5))&&!foundSeals.has("bone"))mapMark(5,5,"◇","#d8cfad","Sarcophagus");
-if(seen.has(key(11,10))&&!foundSeals.has("shadow"))mapMark(11,10,"?","#9f8bc2","Secret");
+if(seen.has(key(11,10))&&(!foundSeals.has("shadow")||!secret))mapMark(11,10,"?","#9f8bc2","Secret");
 if(seen.has(key(13,12))&&sealPlaced<3)mapMark(13,12,"◉","#c2a45e","Seal sockets");
 let fx=ox+x*s+11,fy=oy+y*s+12;c.fillStyle="#e0c45e";c.font="bold 17px monospace";c.textAlign="center";c.fillText(["▲","▶","▼","◀"][dir],fx,fy);c.textAlign="left";c.fillStyle="#c9c1ad";c.font="13px monospace";c.fillText("◆ loot  ◇ interact  ? secret  ◉ objective",205,438);c.fillText("AUTOMAP · discovered points of interest remain marked",205,462)}
 function draw(){mapMode?map():dungeon();renderEffects()}
