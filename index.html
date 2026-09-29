@@ -11,4 +11,7 @@
 <section id="effects" class="effects"></section>
 <section class="hud"><span id="inventory">Keys 0 · Gold 0 · Potions 2</span><p id="log">Torchlight dances across ancient stone. Find another way out.</p></section>
 <footer>W/↑ forward · S/↓ back · A/D turn · J attack · K skill · E use · Q search · H potion · M map</footer>
-</main><script src="game.js?v=11"></script></body></html>
+<script>
+(function(){function hk(e){var k=(e.key||'').toLowerCase(),c=e.code||'',a=null;if(k==='w'||k==='arrowup'||c==='KeyW'||c==='ArrowUp'||c==='Numpad8')a='forward';else if(k==='s'||k==='arrowdown'||c==='KeyS'||c==='ArrowDown'||c==='Numpad2')a='back';else if(k==='a'||k==='arrowleft'||c==='KeyA'||c==='ArrowLeft'||c==='Numpad4')a='left';else if(k==='d'||k==='arrowright'||c==='KeyD'||c==='ArrowRight'||c==='Numpad6')a='right';else if(k==='j'||k===' '||c==='Space')a='attack';else if(k==='k')a='skill';else if(k==='e')a='use';else if(k==='q')a='search';else if(k==='h')a='potion';else if(k==='m')a='map';if(!a)return;e.preventDefault();e.stopImmediatePropagation();var b=document.querySelector('[data-act="'+a+'"]');if(b)b.click();return false}window.addEventListener('keydown',hk,true);document.addEventListener('keydown',hk,true)})();
+</script>
+</main><script src="game.js?v=12"></script></body></html>
